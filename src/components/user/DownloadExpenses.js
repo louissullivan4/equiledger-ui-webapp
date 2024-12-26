@@ -55,7 +55,7 @@ const DownloadExpenses = () => {
     try {
       // Update the endpoint URL to match the new backend route
       const response = await axios.get(
-        `${process.env.BACKEND_URL}/expenses/downloads/${userIdParam}/${selectedYear}`,
+        `${process.env.REACT_APP_BACKEND_URL}/expenses/downloads/${userIdParam}/${selectedYear}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -23,7 +23,7 @@ const AssignedUsersTable = () => {
   useEffect(() => {
     const fetchAssignedUsers = async () => {
       try {
-        const response = await axios.get(`${process.env.BACKEND_URL}/users/accountant/users`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/accountant/users`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

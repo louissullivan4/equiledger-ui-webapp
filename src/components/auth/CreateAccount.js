@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignup } from '../../context/SignupContext';
-import { env } from '../../config/env';
 import { jwtDecode } from "jwt-decode";
-
-const apiUrl = env.apiUrl;
 
 const CreateAccount = () => {
   const location = useLocation();
@@ -146,7 +143,7 @@ const CreateAccount = () => {
         image: imageBase64,
       };
 
-      const response = await axios.post(`${apiUrl}/users`, payload, {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users`, payload, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

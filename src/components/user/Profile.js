@@ -25,7 +25,7 @@ const Profile = ({ user, userId }) => {
                         setLoadingUser(false);
                         return;
                     }
-                    const response = await axios.get(`${process.env.BACKEND_URL}/users/${user_id}`, {
+                    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/${user_id}`, {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }

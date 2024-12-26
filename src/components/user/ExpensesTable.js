@@ -1,7 +1,6 @@
 // src/components/AssignedUsersTable.js
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom'; 
-
 import axios from 'axios';
 import AuthService from '../../services/AuthService';
 
@@ -32,7 +31,7 @@ const ExpensesTable = ({ user, userId }) => {
             setLoading(false);
             return;
         }
-        const response = await axios.get(`${process.env.BACKEND_URL}/expenses/users/${user_id}`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/expenses/users/${user_id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

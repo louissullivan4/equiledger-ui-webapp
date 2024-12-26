@@ -3,9 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../../services/AuthService';
-import { env } from '../../config/env';
-
-const apiUrl = env.apiUrl;
 
 const InviteUser = () => {
   const navigate = useNavigate();
@@ -30,7 +27,7 @@ const InviteUser = () => {
 
     try {
       const response = await axios.post(
-        `${apiUrl}/users/invite`,
+        `${process.env.REACT_APP_BACKEND_URL}/users/invite`,
         { email, inviterId: currentUser?.id },
         {
           headers: {

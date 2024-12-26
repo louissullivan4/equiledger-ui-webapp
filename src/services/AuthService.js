@@ -1,12 +1,11 @@
 import axios from 'axios';
-import { env } from '../config/env';
-
-const apiUrl = env.apiUrl;
 
 const AuthService = {
     async login(email, password) {
         try {
-            const response = await axios.post(`${apiUrl}/users/dashboard-login`, { email, password });
+            console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
+            console.log(`${process.env.REACT_APP_BACKEND_URL}/users/dashboard-login`)
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/dashboard-login`, { email, password });
             if (response.data.token) {
                 localStorage.setItem('user', JSON.stringify(response.data));
                 return { status_code: 200, message: 'Login successful' };
@@ -20,7 +19,7 @@ const AuthService = {
 
     async signup(email, password, token) {
         try {
-            const response = await axios.post(`${apiUrl}/users/signup`, { email, password, token });
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/signup`, { email, password, token });
             if (response.status === 201) {
                 return { status_code: 201, message: 'Signup successful' };
             } else {
