@@ -132,7 +132,7 @@ const DownloadExpenses = () => {
               </select>
               <div className="modal-actions">
                 <button type="submit" disabled={isLoading} className="custom-file-upload">
-                  {isLoading ? 'Downloading...' : 'Submit'}
+                  {isLoading ? '...' : 'Submit'}
                 </button>
                 <button type="button" onClick={handleCloseModal} className="custom-file-upload">
                   Cancel

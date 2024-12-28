@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom'; 
 import axios from 'axios';
 import AuthService from '../../services/AuthService';
+import { formatSimpleDate, capitalise } from '../../utils/gf';
 
 const ExpensesTable = ({ user, userId }) => {
   const location = useLocation();
@@ -16,10 +17,6 @@ const ExpensesTable = ({ user, userId }) => {
 
   const searchTimeout = useRef(null);
 
-  const capitalize = (str) => {
-    if (!str) return '';
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  };
   
   useEffect(() => {
     const fetchExpenses = async () => {
@@ -105,16 +102,18 @@ const ExpensesTable = ({ user, userId }) => {
               <th>Description</th>
               <th>Category</th>
               <th>Cost</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
             {expenses.length > 0 ? (
               expenses.map((expense) => (
                 <tr key={expense.id}>
-                  <td>{capitalize(expense.title)}</td>
+                  <td>{capitalise(expense.title)}</td>
                   <td>{expense.description}</td>
-                  <td>{capitalize(expense.category)}</td>
+                  <td>{capitalise(expense.category)}</td>
                   <td>{expense.amount} {expense.currency}</td>
+                  <td>{formatSimpleDate(expense.updated_at)}</td>
                 </tr>
               ))
             ) : (

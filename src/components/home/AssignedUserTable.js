@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import AuthService from '../../services/AuthService';
 import { useNavigate } from 'react-router-dom';
+import { capitalise } from '../../utils/gf';
 
 const AssignedUsersTable = () => {
   const navigate = useNavigate();
@@ -14,11 +15,6 @@ const AssignedUsersTable = () => {
   const token = currentUser?.token;
 
   const searchTimeout = useRef(null);
-
-  const capitalize = (str) => {
-    if (!str) return '';
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  };
 
   useEffect(() => {
     const fetchAssignedUsers = async () => {
@@ -108,12 +104,12 @@ const AssignedUsersTable = () => {
               users.map((user) => (
                 <tr key={user.id} onClick={() => handleRowClick(user)} className="user-row">
                   <td>
-                    {capitalize(user.fname)} {capitalize(user.sname)}
+                    {capitalise(user.fname)} {capitalise(user.sname)}
                   </td>
                   <td>{user.email}</td>
-                  <td>{capitalize(user.occupation)}</td>
+                  <td>{capitalise(user.occupation)}</td>
                   <td>{user.phone_number}</td>
-                  <td>{capitalize(user.account_status)}</td>
+                  <td>{capitalise(user.account_status)}</td>
                 </tr>
               ))
             ) : (
