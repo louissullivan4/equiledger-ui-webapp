@@ -64,20 +64,21 @@ form {
     align-items: center;
 }
 
-input[type="email"], input[type="password"], input[type="text"] {
+input[type="email"], input[type="password"], input[type="text"], textarea, select {
     width: 100%;
     padding: 0.75em;
     margin-bottom: 1em;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: small;
+    background-color: white;
 }
 
-input[type="email"]:hover, input[type="password"]:hover, input[type="text"]:hover {
+input[type="email"]:hover, input[type="password"]:hover, input[type="text"]:hover textarea:hover, select:hover {
     border-color: var(--cyan);
 }
 
-input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, textarea:focus, select:focus {
     outline: none;
     box-shadow: 0 0 5px var(--cyan);
 }
@@ -175,14 +176,14 @@ p {
 .password-container {
     position: relative;
     width: 100%;
-  }
-  
-  .password-container input {
+}
+
+.password-container input {
     width: 100%;
     padding-right: 2.5em,
-  }
-  
-  .eye-icon {
+}
+
+.eye-icon {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -190,11 +191,11 @@ p {
     cursor: pointer;
     color: var(--current-line);
     font-size: 1.2em;
-  }
-  
-  .eye-icon:hover {
+}
+
+.eye-icon:hover {
     color: var(--cyan);
-  }
+}
 
 .create-account-main-page main {
     background-color: white;
@@ -225,6 +226,7 @@ p {
 .create-account-main-page input[type="text"], 
 .create-account-main-page input[type="tel"], 
 .create-account-main-page input[type="date"], 
+.create-account-main-page textarea,
 .create-account-main-page select {
     width: 100%;
     padding: 0.75em;
@@ -288,7 +290,7 @@ p {
 
 .create-account-main-page option:not(:first-of-type) {
     color: black;
-  }
+}
 
 .create-account-main-page .error-message {
     grid-column: 1 / 3; /* Make error messages span both columns */
@@ -298,13 +300,13 @@ p {
     color: red;
     margin-left: 5px; /* Add space between label text and asterisk */
     font-weight: bold;
-  }
+}
 
-  /* Hide the default file input */
+/* Hide the default file input */
 input[type="file"] {
     display: none;
-  }
-  
+}
+
 .custom-file-upload {
     display: inline-block;
     padding: 0.75em;
@@ -323,7 +325,7 @@ input[type="file"] {
 .custom-file-upload.uploaded {
     background-color: var(--green);
     color: #ffffff;
-  }
+}
 
 .custom-file-upload:hover {
     background-color: var(--green);
@@ -342,70 +344,70 @@ input[type="file"] {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-  }
-  
-  .table-container {
+}
+
+.table-container {
     max-height: 500px; /* Adjust based on row height */
     overflow-y: auto;
     margin-top: 20px;
-  }
-  
-  /* Existing table styles */
-  .users-table {
+}
+
+/* Existing table styles */
+.users-table {
     width: 100%;
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
     background-color: #ffffff;
-  }
-  
-  /* Table Header */
-  .users-table thead {
+}
+
+/* Table Header */
+.users-table thead {
     background-color: var(--purple);
     color: white;
     position: sticky;
     top: 0;
     z-index: 1;
-  }
-  
-  .users-table th {
+}
+
+.users-table th {
     padding: 12px 15px;
     text-align: left;
     font-weight: 600;
     font-size: 1em;
     border-bottom: 2px solid var(--background-color);
-  }
-  
-  /* Table Body */
-  .users-table tbody tr {
+}
+
+/* Table Body */
+.users-table tbody tr {
     transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .users-table td {
+}
+
+.users-table td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
     color: var(--current-line);
     font-size: 0.95em;
-  }
-  
-  /* Alternating Row Colors */
-  .users-table tbody tr:nth-child(even) {
+}
+
+/* Alternating Row Colors */
+.users-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
-  }
-  
-  .users-table tbody tr:nth-child(odd) {
+}
+
+.users-table tbody tr:nth-child(odd) {
     background-color: #ffffff;
-  }
-  
-  /* Hover Effect */
-  .users-table tbody tr:hover {
+}
+
+/* Hover Effect */
+.users-table tbody tr:hover {
     background-color: var(--cyan);
     color: white;
     cursor: pointer;
-  }
-  
+}
+
 .home-main-page {
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -441,7 +443,7 @@ input[type="file"] {
     width: 25%;
     height: 30%;
 }
-  
+
 .home-main-page {
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -554,10 +556,10 @@ h1, h2 {
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Ensure it sits above other elements */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+}
+
+/* Modal Content */
+.modal-content {
     background-color: #ffffff;
     padding: 2em;
     border-radius: 10px;
@@ -565,30 +567,30 @@ h1, h2 {
     max-width: 400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-  }
-  
-  /* Modal Header */
-  .modal-content h2 {
+}
+
+/* Modal Header */
+.modal-content h2 {
     margin-bottom: 1em;
     color: var(--header-font);
     text-align: center;
-  }
-  
-  /* Modal Form */
-  .modal-content form {
+}
+
+/* Modal Form */
+.modal-content form {
     display: flex;
     flex-direction: column;
     gap: 1em;
-  }
-  
-  /* Modal Actions */
-  .modal-actions {
+}
+
+/* Modal Actions */
+.modal-actions {
     display: flex;
     justify-content: space-between;
-  }
-  
-  /* Adjusting the custom-file-upload button within the modal */
-  .modal-actions .custom-file-upload {
+}
+
+/* Adjusting the custom-file-upload button within the modal */
+.modal-actions .custom-file-upload {
     width: 48%;
     padding: 0.75em;
     background-color: var(--purple);
@@ -599,23 +601,23 @@ h1, h2 {
     font-weight: bold;
     font-size: small;
     transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .modal-actions .custom-file-upload:hover {
+}
+
+.modal-actions .custom-file-upload:hover {
     background-color: var(--green);
     transform: scale(1.05);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Required Asterisk */
-  .required {
+}
+
+/* Required Asterisk */
+.required {
     color: var(--red);
     margin-left: 5px;
     font-weight: bold;
-  }
-  
-  /* Adjust select element within the modal to match existing styles */
-  .modal-content select {
+}
+
+/* Adjust select element within the modal to match existing styles */
+.modal-content select {
     width: 100%;
     padding: 0.75em;
     margin: 1em;
@@ -624,12 +626,36 @@ h1, h2 {
     font-size: small;
     appearance: none;
     background-color: white;
-  }
-  
-  .modal-content select:hover,
-  .modal-content select:focus {
+}
+
+.modal-content select:hover,
+.modal-content select:focus {
     border-color: var(--cyan);
     outline: none;
     box-shadow: 0 0 5px var(--cyan);
-  }
-  
+}
+
+.support-link {
+    padding-top: 1em;
+    
+}
+
+.info-message {
+    font-size: 0.9em;
+    padding-bottom: 2em;
+    text-align: center;
+    width: 100%;
+}
+
+.info-message.success {
+    color: green;
+}
+
+.info-message.error {
+    color: red;
+}
+
+.support-main-page main{
+    display: flex;
+    justify-content: center;
+}

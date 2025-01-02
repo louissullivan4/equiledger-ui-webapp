@@ -1,6 +1,6 @@
 // src/components/Auth/Login.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import AuthService from '../../services/AuthService';
 
 const Login = () => {
@@ -48,6 +48,9 @@ const Login = () => {
           />
           <button type="submit">Login</button>
         </form>
+        <div className='support-link'>
+          <Link to="/support">Need Support?</Link>
+        </div>
       </main>
     </section>
   );

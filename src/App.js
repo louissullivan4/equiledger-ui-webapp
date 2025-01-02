@@ -9,6 +9,7 @@ import SignupPage from './pages/SignupPage';
 import LogoutPage from './pages/LogoutPage';
 import CreateAccountPage from './pages/CreateAccountPage';
 import UserPage from './pages/UserPage';
+import SupportPage from './pages/SupportPage.js'
 
 import HomePage from './pages/HomePage';
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/' element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/createaccount" element={<CreateAccountPage />} />
+        <Route path="/support" element={<SupportPage />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/home" element={<HomePage />} />
           <Route path="/user/:id" element={<UserPage />} />
